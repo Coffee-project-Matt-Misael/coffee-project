@@ -8,6 +8,8 @@ td, th {
     padding: 5px 10px;
 }
 
+
+
 body{
     background-image: url("../coffee-project/photos/Coffee cup.jpg");
     color: white;
@@ -49,7 +51,7 @@ body{
 
  nav {
      background: linear-gradient(to right, #000000, #333333, #000000);
-     color: white;
+     color: #1e1e27;
  }
 
  .coffee-selectors{
@@ -57,3 +59,10 @@ body{
      justify-content: center;
  }
 
+ .nav-link{
+     color: #ffffff !important;
+ }
+
+ .navbar-brand {
+     color: white !important;
+ }
