@@ -1,0 +1,104 @@
+table {
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+
+
+body{
+    /*background-image: url("../coffee-project/photos/Coffee cup.jpg");*/
+    color: white;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+.background-image{
+    background-image: url("../coffee-project/photos/Coffee cup.jpg");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    max-height: 40em;
+}
+
+
+
+form {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+input[type="text"],
+select {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+input[type="button"],
+input[type="submit"] {
+    color: white;
+    background-color: black;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: 0.1rem solid white;
+}
+
+form input[type="text"],
+form input[type="password"],
+form select {
+    border-radius: 0.5rem;
+}
+
+nav {
+    background: linear-gradient(to right, #000000, #333333, #000000);
+    color: #1e1e27;
+}
+
+.coffee-selectors{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5em;
+}
+
+.nav-link{
+    color: #ffffff !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+
+/*.jumbotron{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    background-image: url("../coffee-project/photos/Coffee cup.jpg");*/
+/*    height: 346px;*/
+/*    background-size: cover;*/
+/*}*/
+
+#CoffeeBanner{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    opacity: 75%;
+    width: 100%;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#coffees{
+    color: black;
+}

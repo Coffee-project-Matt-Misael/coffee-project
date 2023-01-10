@@ -11,10 +11,22 @@ td, th {
 
 
 body{
-    background-image: url("../coffee-project/photos/Coffee cup.jpg");
+    /*background-image: url("../coffee-project/photos/Coffee cup.jpg");*/
     color: white;
     background-size: 100%;
+    background-repeat: no-repeat;
+
 }
+
+
+.background-image{
+    background-image: url("../coffee-project/photos/Coffee cup.jpg");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    max-height: 40em;
+}
+
+
 
  form {
      background-color: rgba(0, 0, 0, 0.5);
@@ -57,6 +69,7 @@ body{
  .coffee-selectors{
      display: flex;
      justify-content: center;
+     padding-bottom: 5em;
  }
 
  .nav-link{
@@ -65,4 +78,27 @@ body{
 
  .navbar-brand {
      color: white !important;
+ }
+
+
+ /*.jumbotron{*/
+ /*    display: flex;*/
+ /*    justify-content: center;*/
+ /*    background-image: url("../coffee-project/photos/Coffee cup.jpg");*/
+ /*    height: 346px;*/
+ /*    background-size: cover;*/
+ /*}*/
+
+ #CoffeeBanner{
+     display: flex;
+     align-self: center;
+     justify-content: center;
+     opacity: 75%;
+     width: 100%;
+     font-weight: bold;
+     font-size: larger;
+ }
+
+ #coffees{
+     color: black;
  }
