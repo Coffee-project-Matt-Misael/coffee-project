@@ -8,6 +8,12 @@ td, th {
     padding: 5px 10px;
 }
 
+body{
+    background-image: url("../coffee-project/photos/Coffee cup.jpg");
+    color: white;
+    background-size: 100%;
+}
+
  form {
      background-color: rgba(0, 0, 0, 0.5);
      width: 25%;
