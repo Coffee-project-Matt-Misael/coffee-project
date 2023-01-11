@@ -3,7 +3,7 @@
 // COFFEE - TABLE CONTENT //
 
 const coffees = [
-    { id: 1, name: "Light City", roast: "light" },
+    { id: 1, name: "Light City", roast: "light", rating: "&#11088 &#11088 &#11088",  description:  "A light coffee most popular in the big city" },
     { id: 2, name: "Half City", roast: "light" },
     { id: 3, name: "Cinnamon", roast: "light" },
     { id: 4, name: "City", roast: "medium" },
@@ -23,6 +23,7 @@ const inputName = document.querySelector("#input-name");
 const inputRoast = document.querySelector("#input-roast");
 const addCoffeeButton = document.querySelector("#input-submit");
 const searchBox = document.querySelector('#searchBox');
+const roastSelect = document.querySelector('#roast-selection')
 addCoffeeButton.addEventListener("click", () => {
     addCoffees();
 });
@@ -48,7 +49,9 @@ function addCoffees(input) {
 function renderCoffee(coffee) {
     const html = `<div class="coffee d-block col-4 mx-auto p-auto">
     <h1>${coffee.name}</h1>
-    <p>${coffee.roast}</p>
+    <p class="roast">${coffee.roast}</p>
+    <p class="rating">${coffee.rating}</p>
+    <p class="description">${coffee.description}</p>
   </div>`;
 
     return html;
@@ -72,8 +75,8 @@ const roastSelection = document.querySelector("#roast-selection");
 
 function updateCoffees(e) {
     e.preventDefault();
-    const selectedRoast = roastSelection.value;
-    const filteredCoffees = [];
+    let selectedRoast = roastSelection.value;
+    let filteredCoffees = [];
     coffees.forEach((coffee) => {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
@@ -86,13 +89,12 @@ function updateCoffees(e) {
 
 // LIVE SEARCH FUNCTION //
 function searchCoffees() {
-    const searchRoast = searchBox.value.toUpperCase();
+    const searchName = searchBox.value.toUpperCase();
+
     const filteredCoffees = [];
-    console.log(searchRoast);
     coffees.forEach((coffee) => {
-        if (coffee.name.toUpperCase().includes(searchRoast)) {
+        if (coffee.name.toUpperCase().includes(searchName) && coffee.roast.toUpperCase() === roastSelect.value.toUpperCase()) {
             filteredCoffees.push(coffee);
-            console.log(filteredCoffees);
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
@@ -106,7 +108,11 @@ function resetCoffees() {
 // Event listeners
 roastSelection.addEventListener("change", updateCoffees);
 searchBox.addEventListener("input", searchCoffees);
-resetButton.addEventListener("click", resetCoffees);
+//.resetButton.addEventListener("click", resetCoffees);
+
+
+
+
 
 
 

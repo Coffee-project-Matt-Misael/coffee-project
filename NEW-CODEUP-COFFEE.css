@@ -24,6 +24,7 @@ body{
     object-fit: fill;
     background-repeat: no-repeat;
     max-height: 40em;
+    background-size: cover;
 }
 
 
@@ -108,7 +109,26 @@ nav {
 }
 
 #coffees{
-    color: black;
+    color: #ffffff;
     margin-top: 25px;
+
 }
+
+
+.coffee{
+    margin: 6px 6px 6px 10px;
+    border-style: solid;
+    border-radius: 20px;
+    padding-right: 0px;
+    background-color: #333333;
+
+}
+
+.coffee > h1{
+    background-color: #1e1c1c;
+    color: #ffffff;
+}
+
+.roast{
+    margin-bottom: 2px;
 
