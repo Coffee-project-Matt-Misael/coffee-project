@@ -22,6 +22,7 @@ const coffees = [
 const inputName = document.querySelector("#input-name");
 const inputRoast = document.querySelector("#input-roast");
 const addCoffeeButton = document.querySelector("#input-submit");
+const searchBox = document.querySelector('#searchBox');
 addCoffeeButton.addEventListener("click", () => {
     addCoffees();
 });
@@ -104,8 +105,8 @@ function resetCoffees() {
 
 // Event listeners
 roastSelection.addEventListener("change", updateCoffees);
-searchBox.addEventListener("keyup", searchCoffees);
-// resetButton.addEventListener("click", resetCoffees);
+searchBox.addEventListener("input", searchCoffees);
+resetButton.addEventListener("click", resetCoffees);
 
 
 

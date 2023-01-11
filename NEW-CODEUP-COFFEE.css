@@ -68,8 +68,16 @@ nav {
 
 .coffee-selectors{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding-bottom: 5em;
+}
+
+#make-good-coffee{
+    width: 40em;
+}
+
+#search-good-coffee{
+    width: 40em;
 }
 
 .nav-link{
@@ -101,4 +109,6 @@ nav {
 
 #coffees{
     color: black;
+    margin-top: 25px;
 }
+
