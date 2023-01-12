@@ -128,13 +128,16 @@ nav {
     background-color: #333333;
     padding-left: 0px;
     border-top-left-radius: 25px;
-    box-shadow: 5px 4px 8px #7b8282;
+    box-shadow: 5px 4px 8px #484848;
 
 }
 
 .coffee > h1{
     background-color: #1e1c1c;
     color: #ffffff;
+    border-top: solid white;
+    border-bottom: solid white;
+    box-shadow: 0 2px 10px #b9b7b7;
 }
 
 .roast{
@@ -143,6 +146,9 @@ nav {
 
 .rating{
     background-color: #1f1d1e;
+    border-top: solid white;
+    border-bottom: solid white;
+    /*box-shadow: 0 2px 10px #b9b7b7;*/
 }
 
 
