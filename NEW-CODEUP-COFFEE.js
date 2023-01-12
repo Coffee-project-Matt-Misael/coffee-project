@@ -5,23 +5,24 @@
 let ligthRoast = "photos/light-roast.png"
 let mediumRoast = "photos/medium-roast.jpg"
 let darkRoast = "photos/dark-roast.jpg"
+let noPhoto = "photos/pending-image.jpg"
 
 
 const coffees = [
-    { id: 1, pic: ligthRoast, name: "Light City", roast: "light", rating: "&#11088 &#11088 &#11088 &#11088 &#11088",  description:  " A light coffee most popular in the big city" },
-    { id: 2, pic: ligthRoast, name: "Half City", roast: "light", rating: "&#11088 &#11088 &#11088",  description:  " Similar to 'light City' but more popular in smaller cities" },
-    { id: 3, pic: ligthRoast, name: "Cinnamon", roast: "light", rating: "&#11088 &#11088 &#11088 &#11088",  description:  "A true classic Cinnamon taste and fan favorite" },
-    { id: 4, pic: mediumRoast, name: "City", roast: "medium", rating: "&#11088",  description:  "This flavor is again similar to our 'light City' drink but has a darker roast" },
-    { id: 5, pic: mediumRoast, name: "American", roast: "medium", rating: "&#11088 &#11088 &#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 6, pic: mediumRoast, name: "Breakfast", roast: "medium", rating: "&#11088 &#11088 &#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 7, pic: darkRoast, name: "High", roast: "dark", rating: "&#11088 &#11088 &#11088 &#11088 &#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 8, pic: darkRoast, name: "Continental", roast: "dark", rating: "&#11088 &#11088 &#11088 &#11088 &#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 9, pic: darkRoast, name: "New Orleans", roast: "dark", rating: "&#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 10, pic: darkRoast, name: "European", roast: "dark", rating: "&#11088 &#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 11, pic: darkRoast, name: "Espresso", roast: "dark", rating: "&#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 12, pic: darkRoast, name: "Viennese", roast: "dark", rating: "&#11088 &#11088 &#11088 &#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 13, pic: darkRoast, name: "Italian", roast: "dark", rating: "&#11088 &#11088 &#11088",  description:  "A light coffee most popular in the big city" },
-    { id: 14, pic: darkRoast, name: "French", roast: "dark", rating: "&#11088 &#11088 &#11088",  description:  "A light coffee most popular in the big city" },
+    { id: 1, pic: ligthRoast, name: "Light City", roast: "light", rating: "&#11088 &#11088 &#11088 &#11088 &#11088",  description:  " A light coffee most popular in the big city." },
+    { id: 2, pic: ligthRoast, name: "Half City", roast: "light", rating: "&#11088 &#11088 &#11088",  description:  " Similar to 'light City' but more popular in smaller  <br> &#160 cities." },
+    { id: 3, pic: ligthRoast, name: "Cinnamon", roast: "light", rating: "&#11088 &#11088 &#11088 &#11088",  description:  "A true classic Cinnamon taste and fan favorite." },
+    { id: 4, pic: mediumRoast, name: "City", roast: "medium", rating: "&#11088",  description:  "This flavor is again similar to our 'light City' drink but <br> &#160 has a darker roast." },
+    { id: 5, pic: mediumRoast, name: "American", roast: "medium", rating: "&#11088 &#11088 &#11088",  description:  "A taste of the stars, stripes, and all fifty stars." },
+    { id: 6, pic: mediumRoast, name: "Breakfast", roast: "medium", rating: "&#11088 &#11088 &#11088",  description:  "Perfect with some bacon and eggs and a fantastic <br> &#160 way to start any morning." },
+    { id: 7, pic: darkRoast, name: "High", roast: "dark", rating: "&#11088 &#11088 &#11088 &#11088 &#11088",  description:  "you'll probably want some extra snacks with this one. <br> &#160 please drink responsibly" },
+    { id: 8, pic: darkRoast, name: "Continental", roast: "dark", rating: "&#11088 &#11088 &#11088 &#11088 &#11088",  description:  "Just like the breakfast!" },
+    { id: 9, pic: darkRoast, name: "New Orleans", roast: "dark", rating: "&#11088",  description:  "You can practically taste mardi gras in every sip... <br> &#160 which we still arent sure is a good thing" },
+    { id: 10, pic: darkRoast, name: "European", roast: "dark", rating: "&#11088 &#11088",  description:  "It almost feels like you're there just by drinking it!" },
+    { id: 11, pic: darkRoast, name: "Espresso", roast: "dark", rating: "&#11088",  description:  " Espresso is thicker than regular coffee and has a <br> &#160 layer of “crema” on top, which results from air <br> &#160 bubbles mixing with the coffee's oils" },
+    { id: 12, pic: darkRoast, name: "Viennese", roast: "dark", rating: "&#11088 &#11088 &#11088 &#11088",  description:  "It almost feels like you're there just by drinking it!" },
+    { id: 13, pic: darkRoast, name: "Italian", roast: "dark", rating: "&#11088 &#11088 &#11088",  description:  "It almost feels like you're there just by drinking it!" },
+    { id: 14, pic: darkRoast, name: "French", roast: "dark", rating: "&#11088 &#11088 &#11088",  description:  "It almost feels like you're there just by drinking it!" },
 ];
 
 const inputName = document.querySelector("#input-name");
@@ -41,7 +42,7 @@ function addCoffees(input) {
         let addName = inputName.value.toString();
         const addRoast = inputRoast.value.toString();
         addName = addName.charAt(0).toUpperCase() + addName.slice(1); // make first letter uppercase
-        input = { id: addID, name: addName, roast: addRoast };
+        input = { id: addID, pic: noPhoto , name: addName, roast: addRoast, rating: "No Ratings available", description: "A brand new coffee that just hit our shelves! be the first to give it a try!"};
         coffees.push(input);
         console.log(coffees);
         tbody.innerHTML = renderCoffees(coffees);
@@ -55,10 +56,10 @@ function addCoffees(input) {
 function renderCoffee(coffee) {
     const html = `<div class="coffee d-block col-4 mx-auto p-auto">
     <div class="coffee-case"><img class="coffee-pics" src="${coffee.pic}"></div>
-    <h1>${coffee.name}</h1>
-    <p class="roast">${coffee.roast}</p>
-    <p class="rating">${coffee.rating}</p>
-    <p class="description">${coffee.description}</p>
+    <h1> &#160 ${coffee.name}</h1>
+    <p class="roast"> &#160 ${coffee.roast}</p>
+    <p class="rating"> &#160 ${coffee.rating}</p>
+    <p class="description">&#160 ${coffee.description}</p>
   </div>`;
 
     return html;
