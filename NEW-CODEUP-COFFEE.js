@@ -19,7 +19,7 @@ const coffees = [
     { id: 8, pic: darkRoast, name: "Continental", roast: "dark", rating: "&#11088 &#11088 &#11088 &#11088 &#11088",  description:  "Just like the breakfast!" },
     { id: 9, pic: darkRoast, name: "New Orleans", roast: "dark", rating: "&#11088",  description:  "You can practically taste mardi gras in every sip... <br> &#160 which we still arent sure is a good thing" },
     { id: 10, pic: darkRoast, name: "European", roast: "dark", rating: "&#11088 &#11088",  description:  "It almost feels like you're there just by drinking it!" },
-    { id: 11, pic: darkRoast, name: "Espresso", roast: "dark", rating: "&#11088",  description:  " Espresso is thicker than regular coffee and has a <br> &#160 layer of “crema” on top, which results from air <br> &#160 bubbles mixing with the coffee's oils" },
+    { id: 11, pic: darkRoast, name: "Espresso", roast: "dark", rating: "&#11088",  description:  " Espresso is thicker than regular coffee and has a <br> &#160 layer of “crema” on top, which results from air <br> bubbles mixing with the coffee's oils" },
     { id: 12, pic: darkRoast, name: "Viennese", roast: "dark", rating: "&#11088 &#11088 &#11088 &#11088",  description:  "It almost feels like you're there just by drinking it!" },
     { id: 13, pic: darkRoast, name: "Italian", roast: "dark", rating: "&#11088 &#11088 &#11088",  description:  "It almost feels like you're there just by drinking it!" },
     { id: 14, pic: darkRoast, name: "French", roast: "dark", rating: "&#11088 &#11088 &#11088",  description:  "It almost feels like you're there just by drinking it!" },
@@ -84,13 +84,24 @@ const roastSelection = document.querySelector("#roast-selection");
 function updateCoffees(e) {
     e.preventDefault();
     let selectedRoast = roastSelection.value;
+    let coffeeName = inputName;
     let filteredCoffees = [];
     coffees.forEach((coffee) => {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        } else if (roastSelection.value === "all") {
-            filteredCoffees.push(coffee);
+        if (coffeeName.value.length === 0) {
+            if (selectedRoast === 'all' || coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee)
+            }
+        } else {
+            if (coffee.name.toUpperCase().inludes(coffeeName.value.toUpperCase()) &&
+                (selectedRoast === 'all' ||  coffee.roast === selectedRoast)) {
+                    filteredCoffees.push(coffee);
+            }
         }
+        // if (coffee.roast === selectedRoast) {
+        //     filteredCoffees.push(coffee);
+        // } else if (roastSelection.value === "all") {
+        //     filteredCoffees.push(coffee);
+        // }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
@@ -101,7 +112,8 @@ function searchCoffees() {
 
     const filteredCoffees = [];
     coffees.forEach((coffee) => {
-        if (coffee.name.toUpperCase().includes(searchName) && coffee.roast.toUpperCase() === roastSelect.value.toUpperCase()) {
+        if (coffee.name.toUpperCase().includes(searchName) &&
+            coffee.roast.toUpperCase() === roastSelect.value.toUpperCase() || roastSelect.value === 'all') {
             filteredCoffees.push(coffee);
         }
     });
@@ -114,24 +126,34 @@ function resetCoffees() {
 }
 
 // Event listeners
-roastSelection.addEventListener("change", updateCoffees);
-searchBox.addEventListener("input", searchCoffees);
+// roastSelection.addEventListener("change", updateCoffees);
+// searchBox.addEventListener("keyup", searchCoffees);
 //.resetButton.addEventListener("click", resetCoffees);
 
 
+roastSelection.addEventListener("change", () => {
+    let filteredCoffees = []
+    coffees.forEach((coffee) => {
+        if (searchBox.value.length === 0 ?
+            roastSelection.value === 'all' || coffee.roast === roastSelection.value :
+            coffee.name.toLowerCase().includes(searchBox.value.toLowerCase()) &&
+            (roastSelection.value === 'all' || coffee.roast === roastSelection.value)) {
+            filteredCoffees.push(coffee);
+        }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
+searchBox.addEventListener("keyup", () => {
+    let filteredCoffees = []
+    coffees.forEach((coffee) => {
+        if (coffee.name.toLowerCase().includes(searchBox.value.toLowerCase()) &&
+            (roastSelection.value === 'all' || coffee.roast === roastSelection.value)) {
+            filteredCoffees.push(coffee);
+        };
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+});
 
 
 
