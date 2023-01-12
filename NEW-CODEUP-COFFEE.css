@@ -15,12 +15,13 @@ body{
     color: white;
     background-size: 100%;
     background-repeat: no-repeat;
+    background-color: #ffffff;
 
 }
 
 
 .background-image{
-    background-image: url("../coffee-project/photos/Coffee cup.jpg");
+    background-image: url("../coffee-project/photos/coffee-cup.jpg");
     object-fit: fill;
     background-repeat: no-repeat;
     max-height: 40em;
@@ -116,11 +117,18 @@ nav {
 
 
 .coffee{
+    border: solid;
+    border-color: black;
+    border-width: 2px;
+    width: 25em;
     margin: 6px 6px 6px 10px;
     border-style: solid;
     border-radius: 20px;
     padding-right: 0px;
     background-color: #333333;
+    padding-left: 0px;
+    border-top-left-radius: 25px;
+    box-shadow: 5px 4px 8px #7b8282;
 
 }
 
@@ -131,4 +139,29 @@ nav {
 
 .roast{
     margin-bottom: 2px;
+}
 
+.rating{
+    background-color: #1f1d1e;
+}
+
+
+.coffee-pics{
+    border-radius: 25px;
+    width: 20em;
+    height: 25em;
+    border: solid;
+    border-color: white;
+}
+.coffee-case{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.coffee:hover{
+    box-shadow: 0 4px 4px darkslategray;
+    transform: translateY(2px);
+}
